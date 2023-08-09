@@ -1,0 +1,8 @@
+depsversion = "0.0.0"
+
+name = "piot/thunder-audio-queue-services"
+version = "0.0.0"
+
+[[dependencies]]
+name = 'piot/thunder'
+version = "*"
