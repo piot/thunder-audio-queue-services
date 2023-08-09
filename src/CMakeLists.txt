@@ -8,3 +8,4 @@ add_subdirectory(deps/piot/imprint/src/lib)
 add_subdirectory(deps/piot/clog/src/lib)
 
 add_subdirectory(lib)
+add_subdirectory(example)

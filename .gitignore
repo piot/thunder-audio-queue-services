@@ -16,3 +16,4 @@ CMakeCache.txt
 cmake_install.cmake
 Makefile
 src/lib/libthunder-audio-queue-services.a
+src/example/audio-test
