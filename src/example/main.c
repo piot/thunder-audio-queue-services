@@ -24,11 +24,14 @@ int main(int argc, char* argv[])
     ImprintDefaultSetup memory;
 
     int err = imprintDefaultSetupInit(&memory, 2 * 1024);
+    if (err < 0) {
+        return err;
+    }
 
     ThunderSoundModule module;
     thunderSoundModuleInit(&module, &memory.tagAllocator.info);
 
-    thunderSoundModuleDebugSineWave(&module, &memory.tagAllocator.info);
+    thunderSoundModuleDebugSineWave(&module);
 
     thunderAudioQueueServiceInit(&audioQueue, &module.compositor.buffer);
 

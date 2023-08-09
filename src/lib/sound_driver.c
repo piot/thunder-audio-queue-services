@@ -11,7 +11,7 @@ const static int audio_buffer_size = 2 * 1024;
 static void fillBufferCallback(void* _self, AudioQueueRef queue, AudioQueueBufferRef buffer)
 {
     ThunderAudioQueueService* self = _self;
-    thunder_audio_buffer* sound_buffer = self->buffer;
+    ThunderAudioBuffer* sound_buffer = self->buffer;
 
     buffer->mAudioDataByteSize = buffer->mAudioDataBytesCapacity;
     if ((buffer->mAudioDataBytesCapacity % 4) != 0) {
@@ -19,7 +19,7 @@ static void fillBufferCallback(void* _self, AudioQueueRef queue, AudioQueueBuffe
     }
     UInt32 sample_count = buffer->mAudioDataByteSize / sizeof(ThunderSampleOutputS16);
     ThunderSampleOutputS16* target = (ThunderSampleOutputS16*)buffer->mAudioData;
-    thunder_audio_buffer_read(sound_buffer, target, sample_count);
+    thunderAudioBufferRead(sound_buffer, target, sample_count);
 
     const UInt32 packetCount = 0;
     AudioStreamPacketDescription* packetDescriptions = 0;
@@ -70,7 +70,7 @@ static void openOutput(ThunderAudioQueueService* self, float sampleRate)
     CLOG_ASSERT(err == 0, "AudioQueueNewOutput err:%d", (unsigned int)err)
 }
 
-int thunderAudioQueueServiceInit(ThunderAudioQueueService* self, thunder_audio_buffer* buffer)
+int thunderAudioQueueServiceInit(ThunderAudioQueueService* self, ThunderAudioBuffer* buffer)
 {
     self->buffer = buffer;
     openOutput(self, 48000.0f);

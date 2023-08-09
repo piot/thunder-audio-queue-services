@@ -7,15 +7,14 @@
 
 #include <AudioToolbox/AudioToolbox.h>
 
-struct thunder_audio_buffer;
+struct ThunderAudioBuffer;
 
 typedef struct ThunderAudioQueueService {
     AudioQueueRef zQueue;
-    struct thunder_audio_buffer* buffer;
+    struct ThunderAudioBuffer* buffer;
 } ThunderAudioQueueService;
 
-int thunderAudioQueueServiceInit(
-    ThunderAudioQueueService* self, struct thunder_audio_buffer* buffer);
+int thunderAudioQueueServiceInit(ThunderAudioQueueService* self, struct ThunderAudioBuffer* buffer);
 void thunderAudioQueueServiceFree(ThunderAudioQueueService* self);
 
 #endif
