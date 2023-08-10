@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 #include <clog/clog.h>
 #include <thunder-audio-queue-services/sound_driver.h>
-#include <thunder/sound_buffer.h>
+#include <thunder-audio-buffer/sound_buffer.h>
 
 const static int audio_buffer_size = 2 * 1024;
 

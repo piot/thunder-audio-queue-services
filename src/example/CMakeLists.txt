@@ -9,4 +9,4 @@ add_executable(audio-test   main.c)
 # target_include_directories(thunder-audio-queue-services PUBLIC ../include)
 
 target_link_libraries(audio-test PUBLIC
-  thunder-audio-queue-services)
+  thunder-audio-queue-services thunder)

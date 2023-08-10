@@ -23,4 +23,4 @@ endif(OS_MACOS)
 
 target_include_directories(thunder-audio-queue-services PUBLIC ../include)
 
-target_link_libraries(thunder-audio-queue-services PUBLIC thunder)
+target_link_libraries(thunder-audio-queue-services PUBLIC thunder-audio-buffer)

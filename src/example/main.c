@@ -6,7 +6,7 @@
 #include <clog/console.h>
 #include <imprint/default_setup.h>
 #include <thunder-audio-queue-services/sound_driver.h>
-#include <thunder/sound_buffer.h>
+#include <thunder-audio-buffer/sound_buffer.h>
 #include <thunder/sound_module.h>
 
 clog_config g_clog;
